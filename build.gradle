@@ -1,8 +1,9 @@
 plugins {
     id 'java'
+    id "io.freefair.lombok" version "5.0.0-rc4"
 }
 
-group = 'org.example'
+group = 'ru.topacademy'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -10,8 +11,12 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'com.githab.javafaker:javafaker:1.0.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation 'mysql:mysql-connector-java:8/0/32'
+    testImplementation 'commons-dbutils:1.7'
+    testImplementation 'io.rest-assured:rest-assured:5.3.1'
+    testImplementation 'com.google.code.gson:gson:2.10.1'
 }
 
 test {
