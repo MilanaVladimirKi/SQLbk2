@@ -12,7 +12,7 @@ public class ApiSqlTest {
 
     @Test
     public void validTransferFromFirstToSecond() {
-        /*var authInfo = DataHelper.getAuthInfoWithTestData();
+        var authInfo = DataHelper.getAuthInfoWithTestData();
         ApiHelper.makeQueryToLogin(authInfo, 200);
         var verificationCode = SqlHelper.getVerificationCode();
         var verificationInfo = new DataHelper.VerificationInfo(authInfo.getLogin(), verificationCode.getCoda());
@@ -20,19 +20,18 @@ public class ApiSqlTest {
         var cardsBalances = ApiHelper.sendQueryToGetCardsBalance(tokenInfo.getToken(), 200);
         var firstCardBalance = cardsBalances.get(DataHelper.getFirstCardInfo().getId());
         var secondCardBalance = cardsBalances.get(DataHelper.getSecondCardInfo().getId());
-        var amount = DataHelper.generateValidAmount(firstCardBalance);
+        int amount = DataHelper.generateValidAmount(firstCardBalance);
         var transferInfo = new ApiHelper.APITransferInfo(DataHelper.getFirstCardInfo().getNumber(),
                 DataHelper.getSecondCardInfo().getNumber(), amount);
         ApiHelper.generateQueryToTransfer(tokenInfo.getToken(), transferInfo, 200);
         cardsBalances = ApiHelper.sendQueryToGetCardsBalance(tokenInfo.getToken(), 200);
         var actualFirstCardBalance = cardsBalances.get(DataHelper.getFirstCardInfo().getId());
         var actualSecondCardBalance = cardsBalances.get(DataHelper.getSecondCardInfo().getId());
-        assertAll(( -> assertEquals(firstCardBalance - amount, actualFirstCardBalance),
+        assertAll(() -> assertEquals(firstCardBalance - amount, actualFirstCardBalance),
                 () -> assertEquals(secondCardBalance + amount, actualSecondCardBalance));
-	*/
     }
 
-    /*@Test
+    @Test
     public void validTransferFromSecondToFirst() {
         var authInfo = DataHelper.getAuthInfoWithTestData();
         ApiHelper.makeQueryToLogin(authInfo, 200);
@@ -42,14 +41,14 @@ public class ApiSqlTest {
         var cardsBalances = ApiHelper.sendQueryToGetCardsBalance(tokenInfo.getToken(), 200);
         var firstCardBalance = cardsBalances.get(DataHelper.getFirstCardInfo().getId());
         var secondCardBalance = cardsBalances.get(DataHelper.getSecondCardInfo().getId());
-        var amount = DataHelper.generateValidAmount(secondCardBalance);
+        int amount = DataHelper.generateValidAmount(secondCardBalance);
         var transferInfo = new ApiHelper.APITransferInfo(DataHelper.getSecondCardInfo().getNumber(),
                 DataHelper.getFirstCardInfo().getNumber(), amount);
         ApiHelper.generateQueryToTransfer(tokenInfo.getToken(), transferInfo, 200);
         cardsBalances = ApiHelper.sendQueryToGetCardsBalance(tokenInfo.getToken(), 200);
         var actualFirstCardBalance = cardsBalances.get(DataHelper.getFirstCardInfo().getId());
         var actualSecondCardBalance = cardsBalances.get(DataHelper.getSecondCardInfo().getId());
-        assertAll(( -> assertEquals(firstCardBalance + amount, actualFirstCardBalance),
+        assertAll(() -> assertEquals(firstCardBalance + amount, actualFirstCardBalance),
                 () -> assertEquals(secondCardBalance - amount, actualSecondCardBalance));
-    }*/
+    }
 }

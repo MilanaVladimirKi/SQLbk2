@@ -63,7 +63,7 @@ public class ApiHelper {
     public static void generateQueryToTransfer(String token, APITransferInfo transferInfo, Integer statusCode) {
         given()
                 .spec(requestSpec)
-                .header("Authorization", "Bearer" + token)
+                .header("Authorization", "Bearer " + token)
                 .body(transferInfo)
                 .when()
                 .post("/api/transfer")
@@ -87,6 +87,6 @@ public class ApiHelper {
     public static class APITransferInfo {
         String from;
         String to;
-        String amount;
+        Integer amount;
     }
 }
