@@ -30,7 +30,7 @@ public class ApiHelper {
     }
 
     public static APITokenInfo sendQueryToVerify(DataHelper.VerificationInfo verificationInfo, Integer statusCode) {
-        given()
+        return given()
                 .spec(requestSpec)
                 .body(verificationInfo)
                 .when()
@@ -43,7 +43,7 @@ public class ApiHelper {
     }
 
     public static Map<String, Integer> sendQueryToGetCardsBalance(String token, Integer statusCode) {
-        APICardInfo[] cardInfo = given()
+        APICardInfo[] cardsInfo = given()
                 .spec(requestSpec)
                 .header("Authorization", "Bearer " + token)
                 .when()
@@ -54,7 +54,7 @@ public class ApiHelper {
                 .body()
                 .as(APICardInfo[].class);
         Map<String, Integer> cardsBalances = new HashMap<>();
-        for (APICardInfo cardInfo : cardInfo) {
+        for (APICardInfo cardInfo : cardsInfo) {
             cardsBalances.put(cardInfo.getId(), cardInfo.getBalance());
         }
         return cardsBalances;

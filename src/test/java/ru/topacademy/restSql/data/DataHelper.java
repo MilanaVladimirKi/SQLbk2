@@ -1,7 +1,7 @@
 package ru.topacademy.restSql.data;
 import lombok.Value;
 
-import javax.smartcardio.Card;
+//import javax.smartcardio.Card;
 import java.util.Random;
 
 public class DataHelper {
