@@ -4,7 +4,7 @@ services:
   image: mysql:8
   restart: always
   environment:
-   MYSQL_ROOT_PASSWORD: 1
+   MYSQL_ROOT_PASSWORD: 0
    MYSQL_DATABASE: app
    MYSQL_USER: app
    MYSQL_PASSWORD: pass
